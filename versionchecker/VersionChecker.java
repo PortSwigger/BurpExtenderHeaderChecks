@@ -179,7 +179,7 @@ public class VersionChecker implements IScannerCheck {
 		
 		// Checks if issue already reported
 		boolean report = false, found = false;
-		String prefix = requestResponse.getProtocol() + "://" + requestResponse.getHost();
+		String prefix = requestResponse.getHttpService().getProtocol() + "://" + requestResponse.getHttpService().getHost();
 		
 		IScanIssue[] reportedIssues = callbacks.getScanIssues(prefix);
 		for(IScanIssue i : reportedIssues){
@@ -235,7 +235,7 @@ public class VersionChecker implements IScannerCheck {
 			
 			// Checks if issue already reported and if there are any new headers to report
 			boolean report = false, found = false;
-			String prefix = requestResponse.getProtocol() + "://" + requestResponse.getHost();
+			String prefix = requestResponse.getHttpService().getProtocol() + "://" + requestResponse.getHttpService().getHost();
 			
 			IScanIssue[] reportedIssues = callbacks.getScanIssues(prefix);
 			for(IScanIssue i : reportedIssues){
@@ -269,7 +269,7 @@ public class VersionChecker implements IScannerCheck {
 		mhIssue.addRequestResponse(requestResponse);
 			
 		// Checks if issue already reported
-		String prefix = requestResponse.getProtocol() + "://" + requestResponse.getHost();
+		String prefix = requestResponse.getHttpService().getProtocol() + "://" + requestResponse.getHttpService().getHost();
 		IScanIssue[] reportedIssues = callbacks.getScanIssues(prefix);
 		for(IScanIssue i : reportedIssues)
 			if(i.getIssueName().equals(mhIssue.getIssueName()))
@@ -307,7 +307,7 @@ public class VersionChecker implements IScannerCheck {
 			
 			// Checks if issue already reported and if there are any new headers to report
 			boolean report = false, found = false;
-			String prefix = requestResponse.getProtocol() + "://" + requestResponse.getHost();
+			String prefix = requestResponse.getHttpService().getProtocol() + "://" + requestResponse.getHttpService().getHost();
 			IScanIssue[] reportedIssues = callbacks.getScanIssues(prefix);
 			for(IScanIssue i : reportedIssues){
 				if(i.getIssueName().equals(hfIssue.getIssueName())){
@@ -335,7 +335,7 @@ public class VersionChecker implements IScannerCheck {
 				issues.add(idIssue);
 
 				if(BurpExtender.DEBUG)
-					BurpIO.getInstance().write("[+] Reporting: " + idIssue.getIssueName() + " for: " + idIssue.getHost());
+					BurpIO.getInstance().write("[+] Reporting: " + idIssue.getIssueName() + " for: " + idIssue.getHttpService().getHost());
 
 				if(idIssue.headers.size() > 0){
 					List<OutOfDateSoftwareIssue> oodIssues = this.checkOutOfDateSoftware(requestResponse, idIssue.headers);
@@ -345,7 +345,7 @@ public class VersionChecker implements IScannerCheck {
 							issues.add(oodIssue);
 							
 							if(BurpExtender.DEBUG)
-								BurpIO.getInstance().write("[+] Reporting: " + oodIssue.getIssueName() + " for: " + oodIssue.getHost());
+								BurpIO.getInstance().write("[+] Reporting: " + oodIssue.getIssueName() + " for: " + oodIssue.getHttpService().getHost());
 						}
 				}
 				
@@ -358,7 +358,7 @@ public class VersionChecker implements IScannerCheck {
 				issues.add(mhIssue);
 				
 				if(BurpExtender.DEBUG)
-					BurpIO.getInstance().write("[+] Reporting: " + mhIssue.getIssueName() + " for: " + mhIssue.getHost());
+					BurpIO.getInstance().write("[+] Reporting: " + mhIssue.getIssueName() + " for: " + mhIssue.getHttpService().getHost());
 			}
 		}
 		

@@ -140,34 +140,4 @@ public class ScanIssue implements IScanIssue {
 	public void setHttpService(IHttpService service){
 		this.service = service;
 	}
-
-	@Override
-	public String getHost() {
-		return this.host;
-	}
-	
-	public void setHost(String host) {
-		this.host = host;
-	}
-
-	@Override
-	public int getPort() {
-		return this.port;
-	}
-	
-	public void setPort(int port) {
-		this.port = port;
-	}
-
-
-	@Override
-	public String getProtocol() {
-		return this.protocol;
-	}
-	
-	public void setProtocol(String protocol) {
-		this.protocol = protocol;
-	}
-
-
 }
