@@ -1,0 +1,11 @@
+Uuid: 6c633ac7f1ef4295bb308099f69abdfd
+ExtensionType: 1
+Name: Header Checks
+ScreenVersion: 0.3.0
+SerialVersion: 1
+MinPlatformVersion: 0
+ProOnly: True
+Author: Portcullis Security
+ShortDescription: Identifies issues by checking server version and security headers.
+EntryPoint: build/libs/header-checks-all.jar
+BuildCommand: gradle -PburpJar=$BURP_JAR fatJar
