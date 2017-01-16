@@ -16,6 +16,10 @@ sourceSets {
     }
 }
 
+processResources {
+   from('versionchecker/config.xml')
+}
+
 task fatJar(type: Jar) {
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }

@@ -57,7 +57,7 @@ public class BurpIO {
 		if(configsCountSetting != null && !configsCountSetting.equals("0"))
 			this.config = this.loadVersionCheckerConfigs(Integer.parseInt(configsCountSetting));
 		else
-			this.config  = this.generateConfig("config.xml");
+			this.config  = this.generateConfig("/config.xml");
 		
 		this.write("[*] Created " + NAME + " v" + VERSION);
 	}
