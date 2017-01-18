@@ -8,4 +8,4 @@ ProOnly: True
 Author: Portcullis Security
 ShortDescription: Identifies issues by checking server version and security headers.
 EntryPoint: build/libs/header-checks-all.jar
-BuildCommand: gradle -PburpJar=$BURP_JAR fatJar
+BuildCommand: gradle fatJar
