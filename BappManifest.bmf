@@ -2,7 +2,7 @@ Uuid: 6c633ac7f1ef4295bb308099f69abdfd
 ExtensionType: 1
 Name: Header Checks
 ScreenVersion: 0.3.0
-SerialVersion: 1
+SerialVersion: 2
 MinPlatformVersion: 0
 ProOnly: True
 Author: Portcullis Security
