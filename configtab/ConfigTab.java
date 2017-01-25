@@ -712,7 +712,7 @@ public class ConfigTab implements ITab {
 	
 	@Override
 	public String getTabCaption() {
-		return "Burp Extender Config";
+		return "Header Checks";
 	}
 
 	@Override
